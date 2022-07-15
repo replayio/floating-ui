@@ -24,9 +24,9 @@ runs:
       shell: sh
     - run: npm run build
       shell: sh
-    - uses: replayio/action-playwright@v0.4.17
+    - uses: replayio/action-playwright@fix-upload-all
       with:
-        command: npx playwright test packages/dom/test/functional
+        command: npx playwright test packages/dom/test/functional/arrow
         apiKey: ${{ inputs.apiKey }}
         issue-number: ${{ inputs.issue-number }}
         project: ${{ inputs.project }}

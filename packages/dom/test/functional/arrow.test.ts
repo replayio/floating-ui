@@ -40,3 +40,10 @@ allPlacements.forEach((placement) => {
     );
   });
 });
+
+test(`this should fail`, async ({
+  page,
+}) => {
+  await page.goto('http://localhost:1234/arrow');
+  expect(true).toEqual(false);
+});

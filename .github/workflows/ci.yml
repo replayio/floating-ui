@@ -36,6 +36,6 @@ jobs:
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/functional
         with:
-          project: ${{ github.event.inputs.project }}
+          project: replay-firefox
           apiKey: ${{ secrets.RECORD_REPLAY_API_KEY }}
           issue-number: ${{ github.event.pull_request.number }}
