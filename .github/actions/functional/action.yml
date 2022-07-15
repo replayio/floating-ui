@@ -1,6 +1,9 @@
 name: Functional
 description: Performs functional tests checks
 inputs:
+  project:
+    required: true
+    description: "Playwright Project Name"
   apiKey:
     required: true
     description: "Replay.io API Key"
@@ -26,7 +29,7 @@ runs:
         command: npx playwright test packages/dom/test/functional
         apiKey: ${{ inputs.apiKey }}
         issue-number: ${{ inputs.issue-number }}
-        project: replay-firefox
+        project: ${{ inputs.project }}
     - uses: actions/upload-artifact@v2
       if: always()
       with:

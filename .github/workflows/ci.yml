@@ -1,6 +1,15 @@
 name: Tests
-on: [pull_request]
-# on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      project:
+        required: false
+        default: "replay-firefox"
+        description: "Playwright Project Name"
 
 jobs:
   # checks:
@@ -27,5 +36,6 @@ jobs:
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/functional
         with:
+          project: ${{ github.event.inputs.project }}
           apiKey: ${{ secrets.RECORD_REPLAY_API_KEY }}
           issue-number: ${{ github.event.pull_request.number }}
