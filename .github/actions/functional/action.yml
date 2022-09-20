@@ -12,6 +12,8 @@ runs:
       shell: sh
     - run: npx playwright install
       shell: sh
+    - run: npx @replayio/playwright install
+      shell: sh
     - run: npm run build
       shell: sh
     - run: npm run test:functional
