@@ -12,14 +12,7 @@ runs:
       shell: sh
     - run: npx playwright install
       shell: sh
-    - run: npx @replayio/playwright install
-      shell: sh
     - run: npm run build
       shell: sh
     - run: npm run test:functional
       shell: sh
-    - uses: actions/upload-artifact@v2
-      if: always()
-      with:
-        name: visual-snapshots-diff
-        path: test-results
