@@ -15,9 +15,11 @@ jobs:
           node-version: '17'
       - run: npx playwright install-deps
       - uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm install --legacy-peer-deps
       - run: npx playwright install
       - run: npm run build
-      - run: npm run test:functional:update
+      - run: npm run test:replay:update
       - uses: EndBug/add-and-commit@v7
         with:
           add: '.'
