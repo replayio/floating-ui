@@ -8,6 +8,8 @@ runs:
       with:
         node-version: '17'
     - uses: bahmutov/npm-install@v1
+      with:
+        install-command: npm install --legacy-peer-deps
     - run: npx playwright install-deps
       shell: sh
     - run: npx playwright install
